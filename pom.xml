@@ -3,7 +3,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.12</version>
+        <version>4.51</version>
         <relativePath />
     </parent>
 
@@ -20,6 +20,17 @@
             <url>http://opensource.org/licenses/MIT</url>
         </license>
     </licenses>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.jenkins.tools.bom</groupId>
+                <artifactId>bom-2.164.x</artifactId>
+                <version>10</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <pluginRepositories>
         <pluginRepository>
@@ -29,8 +40,7 @@
     </pluginRepositories>
 
     <properties>
-        <jenkins.version>2.164.3</jenkins.version>
-        <java.level>8</java.level>
+        <jenkins.version>2.346.3</jenkins.version>
 
         <workflow.version>2.16</workflow.version>
         <workflow.aggregator.version>2.5</workflow.aggregator.version>
@@ -56,7 +66,6 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>apache-httpcomponents-client-4-api</artifactId>
-            <version>${apache.httpcomponents.client.version}</version>
         </dependency>
         <dependency>
             <groupId>org.xerial.snappy</groupId>
@@ -73,12 +82,10 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins.workflow</groupId>
             <artifactId>workflow-step-api</artifactId>
-            <version>${workflow.version}</version>
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>cloudbees-folder</artifactId>
-            <version>${cloudbees-folder.version}</version>
         </dependency>
 
         <!-- Currently just here for interactive testing via hpi:run: -->
@@ -91,7 +98,6 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>scm-api</artifactId>
-            <version>${scm-api.version}</version>
             <scope>test</scope>
         </dependency>
 
@@ -99,7 +105,6 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.13.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -122,7 +127,6 @@
         <dependency>
             <groupId>org.objenesis</groupId>
             <artifactId>objenesis</artifactId>
-            <version>3.1</version>
         </dependency>
     </dependencies>
     <repositories>
